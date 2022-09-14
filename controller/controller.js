@@ -34,7 +34,7 @@ controller.connect = async (req, res) => {
 
     newSession.on('message', async message => {
         var contacto=await message.getContact();
-        var  client  = mqtt.connect('mqtt://192.168.100.39')
+        var  client  = mqtt.connect('mqtt://fastidious-blini-211e6f.netlify.app')
          const dataMessage={
             "message":message.body,
             "type":message.type,

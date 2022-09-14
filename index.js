@@ -1,32 +1,24 @@
-const { Client, LocalAuth } = require('whatsapp-web.js');
-
-const qrcode = require('qrcode-terminal');
 
 
-const client = new Client({
-    authStrategy: new LocalAuth(
-        { 
-            clientId: "bonnesbaby14"
-        }
-    )
-});
+const express = require("express");
+const cors = require("cors");
+const app = express();
+
+
+const bodyParser = require("body-parser");
+
+const routecustomer = require("./router/customer");
+app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+app.use("/", routecustomer);
 
 
 
-client.on('qr', (qr) => {
-    // Generate and scan this code with your phone
-    qrcode.generate(qr, {small: true});
-});
 
-client.on('ready', () => {
-    console.log('Client is ready!');
-});
-
-client.on('message', (message) => {
-    console.log(message)
-    message.getContact().then(data=>console.log(data))
-  
-});
- 
-
-client.initialize();
+app.listen(5000, () => {
+    console.log("Server running on port 5000");
+  });

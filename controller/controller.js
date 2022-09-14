@@ -13,15 +13,6 @@ controller.connect= async(req,res)=>{
 
 
    const newSession=new session(req.body.id);
-
-  
-//   newSession.getState().then((data) => { 
-//     console.log(data)
-//   });;
-    
-
-   
-   
     
    newSession.on(`qr`, (qr) => {
 		

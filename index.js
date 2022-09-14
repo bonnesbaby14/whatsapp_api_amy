@@ -3,6 +3,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+var mosca = require('mosca');
+
 
 
 const bodyParser = require("body-parser");
@@ -16,6 +18,17 @@ app.use(bodyParser.json());
 
 app.use("/", routecustomer);
 
+
+
+
+var server = new mosca.Server({
+  port: 1883,
+});
+
+server.on('ready', function () {
+  console.log("servidor mqtt mosca listo");
+   
+});
 
 
 

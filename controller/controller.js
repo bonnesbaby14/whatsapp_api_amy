@@ -20,7 +20,7 @@ controller.connect = async (req, res) => {
 
         console.log("llego un nuevo qr")
         res.status(200).send({
-            "qr": qrcode.generate(qr, { small: true }),
+            "qr": qr,
         });
     });
 

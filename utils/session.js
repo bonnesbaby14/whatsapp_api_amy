@@ -8,6 +8,7 @@ module.exports= function(idsession) {
 
    const client = new Client({
     puppeteer: {
+        executablePath: process.env.CHROME_BIN || null,
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox'

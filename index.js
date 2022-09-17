@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 var mosca = require('mosca');
-const port = process.env.PORT || 5050;
+const port = 8080;
 
  
 

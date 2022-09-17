@@ -15,4 +15,6 @@ RUN apt-get install gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups
 RUN apt-get install chromium-browser -y
 COPY . .
 
+EXPOSE 8080
+
 CMD ["npm","start"]

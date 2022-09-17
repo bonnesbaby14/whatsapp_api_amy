@@ -16,5 +16,6 @@ RUN apt-get install chromium-browser -y
 COPY . .
 
 EXPOSE 8080
+EXPOSE 1883
 
 CMD ["npm","start"]

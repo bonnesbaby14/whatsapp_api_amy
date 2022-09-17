@@ -4,7 +4,9 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 var mosca = require('mosca');
+const port = process.env.PORT || 5050;
 
+ 
 
 
 const bodyParser = require("body-parser");
@@ -32,6 +34,6 @@ server.on('ready', function () {
 
 
 
-app.listen(80, () => {
-    console.log("Server running on port 5000");
+app.listen(port, () => {
+    console.log("Server running on port "+port);
   });

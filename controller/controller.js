@@ -9,6 +9,11 @@ const session = require("../utils/session");
 var mqtt = require('mqtt');
 
 
+controller.index=(req,res)=>{
+    res.status(200).send({
+        "status": "En linea",
+    });
+}
 controller.connect = async (req, res) => {
 
 

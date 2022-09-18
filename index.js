@@ -24,11 +24,11 @@ app.use("/", routecustomer);
 
 
 var server = new mosca.Server({
-  port: 1883,
+  port: process.env.mqtt||1883,
 });
 
 server.on('ready', function () {
-  console.log("servidor mqtt mosca listo");
+  console.log("servidor mqtt mosca listo port"+ (process.env.mqtt||1883));
    
 });
 

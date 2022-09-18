@@ -1,11 +1,15 @@
 
 
+var env = require('node-env-file'); // .env file
+env(__dirname + '/.env');
 const express = require("express");
 const cors = require("cors");
 const app = express();
 var mosca = require('mosca');
-const port = 8080;
-const mqttPort=1883;
+const port = process.env.PORT;
+const mqttPort=process.env.MQTT;
+
+console.log(port,mqttPort)
 
  
 

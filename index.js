@@ -6,8 +6,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 var mosca = require('mosca');
-const port = process.env.PORT;
-const mqttPort=process.env.MQTT;
+const port = process.env.SERVERPORT;
+const mqttPort=process.env.PORT;
 
 console.log(port,mqttPort)
 

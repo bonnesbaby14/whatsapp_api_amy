@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 var mosca = require('mosca');
 const port = 8080;
+const mqttPort=process.env.mqtt||1883;
 
  
 
@@ -24,11 +25,11 @@ app.use("/", routecustomer);
 
 
 var server = new mosca.Server({
-  port: process.env.mqtt||1883,
+  port: mqttPort,
 });
 
 server.on('ready', function () {
-  console.log("servidor mqtt mosca listo port"+ (process.env.mqtt||1883));
+  console.log("servidor mqtt mosca listo port" + mqttPort);
    
 });
 

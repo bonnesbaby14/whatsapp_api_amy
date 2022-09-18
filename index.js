@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 var mosca = require('mosca');
 const port = 8080;
-const mqttPort=process.env.mqtt||1883;
+const mqttPort=1883;
 
  
 

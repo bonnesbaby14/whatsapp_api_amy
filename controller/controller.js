@@ -60,6 +60,11 @@ controller.connect = async (req, res) => {
 
 }
 
+controller.alondra= async(req, res)=>{
+
+    res.sendFile(__dirname + "/alondra.html");
+}
+
 
 
 
